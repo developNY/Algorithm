@@ -14,16 +14,35 @@ public class DFSandBFS2 {
 	static boolean [] visited;
 	
 	static void dfs(ArrayList<Integer> [] a, boolean [] visited, int start) {
+		/*if (visited[start]) {
+			return;
+		}*/
+
 		visited[start] = true;
-		System.out.println(start+1 + " ");
-		
-		for(int i=0; i<=vertex; i++) {
-			if(!visited[a[start].get(i)])
-				dfs(a, visited, a[start].get(i));
+		System.out.print(start+1 + " ");
+
+		for (int vv : a[start]) {		//이런식으로 for each를 써서 하나씩 접근하고 ArrayList에 들어가지 않는 부분 자연스럽게 넘길 수 있음
+			if (!visited[vv]) {
+				dfs(a, visited, vv);
+			}
 		}
 	}
 	static void bfs(ArrayList<Integer> [] a, boolean [] visited, int start) {
 		Queue<Integer> q = new LinkedList<>();
+		q.add(start);
+		visited[start] = true;
+		
+		while(!q.isEmpty()) {
+			int v = q.poll();
+			System.out.print(v+1 + " ");
+
+			for (int vv : a[v]) {
+				if (!visited[vv]) {
+					q.add(vv);
+					visited[vv] = true;
+				}
+			}
+		}
 	}
 	
 	public static void main(String[] args) {
@@ -48,7 +67,7 @@ public class DFSandBFS2 {
 		dfs(a, visited, start);
 		
 		System.out.println();
-		for(int i=0; i<vertex; i++)
+		for(int i=0; i<=vertex; i++)
 			visited[i] = false;
 		
 		bfs(a, visited, start);
