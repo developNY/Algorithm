@@ -1,9 +1,11 @@
 package DFS;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
+import java.util.Comparator;
 
 //백준 1260번
 //https://www.acmicpc.net/problem/1260
@@ -14,10 +16,6 @@ public class DFSandBFS2 {
 	static boolean [] visited;
 	
 	static void dfs(ArrayList<Integer> [] a, boolean [] visited, int start) {
-		/*if (visited[start]) {
-			return;
-		}*/
-
 		visited[start] = true;
 		System.out.print(start+1 + " ");
 
@@ -63,6 +61,8 @@ public class DFSandBFS2 {
 			a[row].add(col);
 			a[col].add(row);
 		}
+		for(int i=0; i<=vertex; i++)
+			Collections.sort(a[i]);
 		
 		dfs(a, visited, start);
 		
