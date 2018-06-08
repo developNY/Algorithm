@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
-import java.util.Comparator;
 
 //백준 1260번
 //https://www.acmicpc.net/problem/1260
