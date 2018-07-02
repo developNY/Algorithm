@@ -2,16 +2,17 @@ package JOBS;
 
 import java.util.Scanner;
 
-public class p9 {
+public class reverse {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int num = scan.nextInt();
-		int [][] a = new int[num][num];
-		int value = 1;
+		int [] a = new int[num];
 		
 		for(int i=0; i<num; i++) {
-	//		a[i] = value;
+			a[i] = scan.nextInt();
 		}
-		
+		for(int i=num-1; i>=0; i--) {
+			System.out.print(a[i] + " ");
+		}
 	}
 }

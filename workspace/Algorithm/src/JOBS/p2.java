@@ -1,4 +1,4 @@
-package algorithmlabs;
+package JOBS;
 
 import java.util.Scanner;
 

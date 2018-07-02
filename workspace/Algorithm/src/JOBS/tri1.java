@@ -2,16 +2,15 @@ package JOBS;
 
 import java.util.Scanner;
 
-public class p9 {
+public class tri1 {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int num = scan.nextInt();
-		int [][] a = new int[num][num];
-		int value = 1;
 		
 		for(int i=0; i<num; i++) {
-	//		a[i] = value;
+			for(int j=0; j<=i; j++)
+				System.out.print("*");
+			System.out.println();
 		}
-		
 	}
 }
