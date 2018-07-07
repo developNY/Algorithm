@@ -1,4 +1,4 @@
-//package JOBS;
+package JOBS;
 
 import java.util.Scanner;
 
@@ -25,6 +25,11 @@ public class representnumber {
 				max = num[i];
 			}
 		}
-		System.out.println(max*10);
+		for(int i=0; i<100; i++) {
+			if(num[i] == max) {
+				System.out.println((i+1)*10);
+				break;
+			}
+		}
 	}
 }
