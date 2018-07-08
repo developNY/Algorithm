@@ -3,30 +3,30 @@ package JOBS;
 import java.util.Scanner;
 
 public class offset {
-	public static int compare(int a[][]) {
-		int res = 0;
-		
-		for(int i=0; i<5; i++) {
-			for(int j=0; j<5; j++) {
-				if((i-1 >= 0) && (a[i][j] < a[i-1][j])) {
-					if((j-1 >= 0) && (a[i][j] < a[i][j-1])) {
-						if((i+1 <= 4) && (a[i][j] < a[i+1][j])) {
-							if((j+1 <= 4) && (a[i][j] < a[i][j+1])) {
-								res = 0;								
-							}
-						}
-					}
-				}
-				else
-					res = 1;
+	static int a[][] = new int[5][5];
+	static int dx[] = {-1, 0, 1, 0};
+	static int dy[] = {0, -1, 0, 1};
+	static int s;
+
+	static boolean isInside(int x, int y) {
+		return (x>=0 && x<5) && (y>=0 && y<5);
+	}
+	
+	static void dfs(int x, int y) {
+		for(int i=0; i<4; i++) {
+			int nextX = x + dx[i];
+			int nextY = y + dy[i];
+			if(isInside(nextX, nextY) && a[x][y] >= a[nextX][nextY]) {
+				s = 1;
+				break;
+			} else {
+				s = 0;
 			}
 		}
-		return res;
 	}
 	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		int a[][] = new int[5][5];
 		
 		for(int i=0; i<5; i++) {
 			for(int j=0; j<5; j++)
@@ -34,11 +34,11 @@ public class offset {
 		}
 		for(int i=0; i<5; i++) {
 			for(int j=0; j<5; j++) {
-				if(compare(a) == 0) {
-					System.out.print("* ");
-				} else {
+				dfs(i,j);
+				if(s == 1)
 					System.out.print(a[i][j] + " ");
-				}
+				else
+					System.out.print("* ");
 			}
 			System.out.println();
 		}
