@@ -16,7 +16,7 @@ public class offset {
 		for(int i=0; i<4; i++) {
 			int nextX = x + dx[i];
 			int nextY = y + dy[i];
-			if(isInside(nextX, nextY) && a[x][y] >= a[nextX][nextY]) {
+			if(isInside(nextX, nextY) && a[x][y] >= a[nextX][nextY]) {//직렬조건이면 위험함. 병렬조건으로 바꾸기
 				s = 1;
 				break;
 			} else {
