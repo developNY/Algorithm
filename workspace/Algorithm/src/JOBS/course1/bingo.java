@@ -1,4 +1,4 @@
-package JOBS.course1;
+//package JOBS.course1;
 
 import java.util.Scanner;
 
@@ -36,6 +36,27 @@ public class bingo {
 	}
 
 	static void diagonal(int bingo[][]) {
+		int zero = 0;
+		for (int i = 0; i < 5; i++) {
+			if (bingo[i][i] == 0) {
+				zero++;
+			}
+		}
+		if (zero == 5) {
+			cnt++;
+			zero = 0;
+		}
+		zero=0;
+		for (int i = 0; i < 5; i++) {
+			if (bingo[i][4-i] == 0) {
+				zero++;
+			}
+		}
+		if (zero == 5) {
+			cnt++;
+			zero = 0;
+		}
+		zero=0;
 	}
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
@@ -51,36 +72,32 @@ public class bingo {
 				call[i][j] = scan.nextInt();
 		}
 		
-		first: for(int i=0; i<5; i++) {
+		for(int i=0; i<5; i++) {
 			for(int j=0; j<5; j++) {
 				for(int k=0; k<5; k++) {
 					for(int l=0; l<5; l++) {
 						if(call[i][j] == bingo[k][l]) {
+							cnt = 0;	//이걸 안하면 빙고가 1개라도 생기면 같은것을 계속 cnt증가시키기 때문에 이걸 해줘야 한다. 그래도 어차피 계속 for문을 통해서 탐색을 하고 있기 때문.
 							bingo[k][l] = 0;
 							row(bingo);
 							if(cnt == 3) {
 								System.out.println(i*5+(j+1));
-								break first;
+								return;
 							}
 							col(bingo);
 							if(cnt == 3) {
 								System.out.println(i*5+(j+1));
-								break first;
+								return;
 							}
 							diagonal(bingo);
 							if(cnt == 3) {
 								System.out.println(i*5+(j+1));
-								break first;
+								return;
 							}
 						}
 					}
 				}
 			}
-		}
-		for(int i=0; i<5; i++) {
-			for(int j=0; j<5; j++)
-				System.out.print(bingo[i][j] + " ");
-			System.out.println();
 		}
 	}
 }
