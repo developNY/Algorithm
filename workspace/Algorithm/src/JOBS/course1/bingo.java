@@ -1,4 +1,4 @@
-//package JOBS.course1;
+package JOBS.course1;
 
 import java.util.Scanner;
 
