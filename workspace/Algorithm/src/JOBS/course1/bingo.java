@@ -80,17 +80,9 @@ public class bingo {
 							cnt = 0;	//이걸 안하면 빙고가 1개라도 생기면 같은것을 계속 cnt증가시키기 때문에 이걸 해줘야 한다. 그래도 어차피 계속 for문을 통해서 탐색을 하고 있기 때문.
 							bingo[k][l] = 0;
 							row(bingo);
-							if(cnt == 3) {
-								System.out.println(i*5+(j+1));
-								return;
-							}
 							col(bingo);
-							if(cnt == 3) {
-								System.out.println(i*5+(j+1));
-								return;
-							}
 							diagonal(bingo);
-							if(cnt == 3) {
+							if(cnt >= 3) {//갑자기 0에서 4빙고가 될 수 있끼 때문에 == 3 이라고 하면 안되는 거다.
 								System.out.println(i*5+(j+1));
 								return;
 							}

@@ -1,4 +1,4 @@
-//package JOBS.course2;
+package JOBS.course2;
 
 import java.util.Scanner;
 
@@ -22,12 +22,12 @@ public class maxoffarr {
 		
 		for(int i=0; i<9; i++) {
 			for(int j=0; j<9; j++) {
-				if(a[j][i] == max) {
+				if(a[i][j] == max) {
 					System.out.println(max);
-					System.out.print(j+1);
-					System.out.print(" ");
 					System.out.print(i+1);
-					break;
+					System.out.print(" ");
+					System.out.print(j+1);
+					return;
 				}
 			}
 		}

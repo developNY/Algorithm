@@ -13,7 +13,12 @@ public class seat {
 		int cnt = 1;
 		int number = 1;
 		int i = 0, j = 0;
-
+		
+		if(c*r < num) {
+			System.out.println("0");
+			return;
+		}
+		
 		while (number <= c*r) {
 			if (cnt % 4 == 1) {
 				if(cnt == 1) {
