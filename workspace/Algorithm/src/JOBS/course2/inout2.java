@@ -2,11 +2,17 @@ package JOBS.course2;
 
 import java.util.Scanner;
 
-public class inout {
+public class inout2 {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int a[][] = new int[10][10];
 		int num = scan.nextInt();
+		
+		for(int i=0; i<10; i++) {
+			for(int j=0; j<10; j++) {
+				a[i][j] = scan.nextInt();
+			}
+		}
 
 		for (int l = 0; l < num; l++) {
 			for (int i = 0; i < 10; i++) {
