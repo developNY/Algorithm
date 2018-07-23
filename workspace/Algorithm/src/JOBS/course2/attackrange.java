@@ -1,5 +1,6 @@
 package JOBS.course2;
-//거리사이의 절대값으로 풀면 쉽게 풀린다
+//거리사이의 절대값으로 풀면 쉽게 풀린다. 기준점이랑 좌표값이랑 절대값을 구해서 사거리보다 작거나 같으면 뒤집어서
+//이중 for문 하나로 한번만 탐색해서 풀 수 있다.
 import java.util.Scanner;
 
 public class attackrange {
@@ -11,8 +12,6 @@ public class attackrange {
 		int unitY = scan.nextInt() - 1;
 		int x4[] = { -1, 0, 1, 0 };
 		int y4[] = { 0, 1, 0, -1 };
-		int x8[] = { -1, 1, 1, -1 };
-		int y8[] = { 1, 1, -1, -1 };
 		int ar = scan.nextInt();
 		int nextX, nextY, num = 1;
 
@@ -20,22 +19,10 @@ public class attackrange {
 			for (int j = 0; j < 4; j++) {
 				nextX = unitX + x4[j] * num;
 				nextY = unitY + y4[j] * num;
-				if ((nextX < 0 || nextX >= n) && (nextY < 0 || nextY >= n)) {
+				if ((nextX < 0 || nextX >= n) || (nextY < 0 || nextY >= n)) {
 					continue;
 				}
 				map[nextX][nextY] = num;
-			}
-			num++;
-		}
-		num = 1;
-		for (int i = 0; i < ar; i++) {
-			for (int j = 0; j < 4; j++) {
-				nextX = unitX + x8[j];
-				nextY = unitY + y8[j];
-				if ((nextX < 0 || nextX >= n) && (nextY < 0 || nextY >= n)) {
-					continue;
-				}
-				map[nextX][nextY] = num+1;
 			}
 			num++;
 		}
