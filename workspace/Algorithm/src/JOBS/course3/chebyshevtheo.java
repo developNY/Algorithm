@@ -7,31 +7,24 @@ public class chebyshevtheo {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int n, cnt = 0;
-		int prime[] = new int[123456];
 
-		for (int i = 2; i < 123456; i++) {
-			for (int j = 2; j <= i; j++) {
-				if(i % j == 0) {
-					break;
-				}
-			}
-		}
-
-		while (true)
-
-		{
+		while (true) {
 			n = scan.nextInt();
 			if (n == 0)
 				break;
+			if (n == 1) {
+				System.out.println(1);
+				continue;
+			}
 
-			for (int i = n + 1; i <= 2 * n; i++) {
+			for (int i = n+1; i <= 2*n; i++) {
 				for (int j = 2; j <= i; j++) {
-					if (i == j) {
+					if(j == i) {
 						cnt++;
+					}
+					if(i % j == 0) {
 						break;
 					}
-					if (i % j == 0)
-						break;
 				}
 			}
 			System.out.println(cnt);

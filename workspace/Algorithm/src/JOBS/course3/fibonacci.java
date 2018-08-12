@@ -7,6 +7,10 @@ public class fibonacci {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int n = scan.nextInt();
+		if (n == 0) {
+			System.out.println(0);
+			return;
+		}
 		BigInteger fibo[] = new BigInteger[n+1];
 		
 		fibo[0] = BigInteger.ZERO;
