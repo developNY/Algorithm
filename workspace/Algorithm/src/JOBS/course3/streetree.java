@@ -21,21 +21,17 @@ public class streetree {
 				max = cha[i];
 		}
 
-		for (int i = 2; i <= max;) {//이렇게 하면 max가 1억이 될 수도 있어서 이렇게 하면 안되고 유클리드 호제법?을 써야 된다고 함.
-			for (int j = 0; j < cha.length; j++) {
-				if (cha[j] % i == 0) {
-					cnt++;
+		for(int i=2; i<max; i++) {
+			if(cnt == n-1) {
+				for(int j=0; j<n-1; j++) {
+					cha[i] %= i;
+					
 				}
+				cnt = 0;
 			}
-			if (cnt == cha.length) {
-				gcd *= i;
-			} else {
-				i++;
+			if(cha[i] % i == 0) {
+				cnt++;
 			}
-		}
-
-		for (int i = 0; i < ; i++) {
-
 		}
 	}
 }
