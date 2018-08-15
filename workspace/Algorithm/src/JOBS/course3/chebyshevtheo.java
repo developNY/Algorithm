@@ -1,6 +1,7 @@
 package JOBS.course3;
 
 //일일이 소수를 다 구하면 타임에러 뜨고, 소수를 미리 구해놓고(이미 구간을 알고 있으니 가능) 에라토스테네스의 체를 이용해서 푼다.
+//먼저  n 이전의 수에서 소수를 구해서 배열에 저장해두고 그걸로 나눠주면 된다.
 import java.util.Scanner;
 
 public class chebyshevtheo {

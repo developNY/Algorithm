@@ -1,5 +1,6 @@
 package JOBS.course3;
 // 10이 구성되려면 2, 5가 있어야 함. 그래서 2, 5 개수를 세면 됨.
+//조합을 다 곱해서 구하지 않고 2랑 5로 나눠서 그 개수를 구하면 됨.
 import java.math.BigInteger;
 import java.util.Scanner;
 
